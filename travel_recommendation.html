@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head><title>Travel Recommendation</title></head>
+<body>
+<style>
+  #navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: 'Arial', sans-serif;
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    align-items: center;
+    padding: 16px 24px;
+    z-index: 1000;
+  }
+
+  .nav-middle {
+    padding: 0 24px;
+    text-align: center;
+  }
+
+  .nav-middle a {
+    margin: 0 16px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .nav-right {
+    text-align: center;
+  }
+
+  body {
+    margin: 0;
+    padding-top: 12em; /* adjust if needed */
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/navbar-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(214, 221, 214, 0.2), rgba(5, 46, 5, 0));
+    z-index: -1;
+  }
+
+  .container {
+      text-align: center;
+      padding-top: 160px;
+      font-family: 'Arial', sans-serif;
+      color: #333;
+      padding: 24px;
+  }
+
+  .social-media {
+      margin-top: 24px;
+  }
+
+  .social-media img {
+      width: 32px;
+      margin: 0 10px;
+  }
+
+  .nav-right button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    margin-left: 4px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .nav-right button:hover {
+    background-color: #45a049;
+  }
+
+  .nav-right input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 4px;
+  }
+  /* Contact Form Styling */
+  #contactForm {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+  #contactForm input[type="text"],
+  #contactForm input[type="email"],
+  #contactForm textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  #contactForm button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  #contactForm button:hover {
+    background-color: #45a049;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 400px; /* Increased width for bigger cards */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .card-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-body {
+    padding: 16px;
+  }
+
+  .card-title {
+    margin: 0 0 8px;
+    font-size: 1.4em;
+  }
+
+  .card-text {
+    margin: 0;
+    color: #555;
+    font-size: 1.1em;
+  }
+</style>
+
+<nav id="navbar" class="navbar-background">
+  <div class="nav-left">
+    <h2>Travel Recommendation</h2>
+  </div>
+  <div class="nav-middle">
+    <a href="#index" onclick="showIndex()">Home</a>
+    <a href="#about-us" onclick="showAboutUs()">About Us</a>
+    <a href="#contact-us" onclick="showContactUs()">Contact Us</a>
+  </div>
+  <div class="nav-right">
+    <input type="text" placeholder="Search...">
+    <button type="submit">Search</button>
+    <button type="reset">Reset</button>
+  </div>
+</nav>
+
+<div id="index">
+  <div class="container">
+    <h1>Welcome to Travel Recommendation</h1>
+    <p>Discover the best travel destinations and experiences</p>
+    <div class="social-media">
+      <a href="#"><img src="https://img.icons8.com/ios/50/000000/facebook--v1.png" alt="Facebook"></a>
+      <a href="#"><img src="https://img.icons8.com/ios/50/000000/instagram-new--v1.png" alt="Instagram"></a>
+      <a href="#"><img src="https://img.icons8.com/ios/50/000000/twitter--v1.png" alt="Twitter"></a>
+    </div>
+  </div>
+</div>
+
+<div id="about-us" style="display:none;">
+  <div class="container">
+    <h1>About Us</h1>
+    <section class="company-info">
+      <h2>Our Company</h2>
+      <p>
+        We are a leading travel recommendation service that curates unforgettable travel experiences tailored to your interests. Our mission is to help you explore the world through personalized suggestions and inspire your next adventure.
+      </p>
+    </section>
+
+    <section class="team">
+      <h2>Meet Our Team</h2>
+      <div class="team-member">
+        <h3>Jane Doe</h3>
+        <p>CEO & Founder</p>
+      </div>
+      <div class="team-member">
+        <h3>John Smith</h3>
+        <p>Head of Operations</p>
+      </div>
+      <div class="team-member">
+        <h3>Emily Johnson</h3>
+        <p>Travel Expert</p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div id="contact-us" style="display:none;">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <br><br>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <br><br>
+      <textarea name="message" placeholder="Write your message here..." rows="5" required></textarea>
+      <br><br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+<script src="travel_recommendation.js"></script>
+</body>
+</html>
+
+
+
+
