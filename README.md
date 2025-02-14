@@ -1,7 +1,1 @@
-<<<<<<< Updated upstream
-
-=======
-# travel_recommendation
-
-## javascript-vanilla-website
->>>>>>> Stashed changes
+# Travel Recommendation
